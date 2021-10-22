@@ -1,0 +1,23 @@
+\section{Probability} 
+
+\subsection*{Derived distributions}
+
+$Z = X+Y$ (independent)
+\begin{itemize}
+\item $p_Z(z) = \sum_x p_X(x) p_Y(z-x)$
+\item $f_Z(z) = \int_{-\infty}^{\infty} f_X(x) f_Y(z-x) dx$
+\item Sum of independent normals is normal. 
+\end{itemize}
+
+Monotonic transformation: $Y = g(X)$
+\[ F_Y(y) = f_X(h(y))\left|\frac{dh}{dy}(y)\right|, h(y) = g^{-1}(x) \]
+
+\subsection*{Deeper view of conditioning}
+\begin{itemize}
+\item \textbf{Law of iterated expectations} $\mathbf{E}[X] = \mathbf{E}\left[\mathbf{E}[X|Y] \right]$
+\item \textbf{Law of total variance} $Var(X) = \mathbf{E}\left[Var(X|Y)\right] + Var(\mathbf{E}[X|Y])$
+\end{itemize}
+
+Sum of a random number of independent r.v.'s: $Y = X_1 + \ldots + X_N$
+\[ \mathbf{E}[Y] = \mathbf{E}[N] \cdot \mathbf{E}[X] \]
+\[ Var(Y) = \mathbf{E}[N]\,Var(X) + (\mathbf{E}[X])^2\,Var(N) \]
