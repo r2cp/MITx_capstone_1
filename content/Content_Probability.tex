@@ -35,3 +35,73 @@ Weak law of large numbers: $X_i$ (i.i.d.), $M_n = \frac{X_1 + \ldots + X_n}{n} \
 Central limit theorem: $X_i$ (i.i.d.), $\text{CDF of }\frac{X_1 + \ldots + X_n - n\mathbf{E}[X]}{\sqrt{n}\sigma_X} \rightarrow \text{ standard normal CDF}$
 
 
+\subsection*{Unit 9: The Bernoulli and Poisson processes}
+
+% \begin{table}[h!]
+%     \begin{tabular}{lll}
+%     ~                        & Poisson             & Bernoulli     \\
+%     Times of arrival         & Continuous          & Discrete      \\
+%     Arrival Rate             & $\lambda$/unit time & $p$/per trial \\
+%     PMF of \# of Arrivals    & Poisson             & Binomial      \\
+%     Interarrival Time Distr. & Exponential         & Geometric     \\
+%     Time to $k$-th arrival   & Erlang              & Pascal       
+%     \end{tabular}
+% \end{table}
+
+\subsubsection*{Bernoulli process} 
+
+Number of successes/arrivals $S$ in $n$ time slots:\\
+$S = X_1 + \ldots + X_n$ (Binomial)\\
+$\mathbf{P}(S=k) = {n \choose k} p^k (1-p)^(n-k), k=0,\ldots,n$\\
+$\mathbf{E}[S] = np$\\
+$Var(S) = np(1-p)$\\
+
+Time until the first sucess/arrival $T_1$\\
+$T_1 = \min\lbrace i: X_i = 1\rbrace$ (Geometric)\\
+$\mathbf{P}(T_1=k) = (1-p)^(k-1)p, k=1,2,\ldots$\\
+$\mathbf{E}[T_1] = \frac{1}{p}$\\
+$Var(T_1) = \frac{1-p}{p^2}$\\
+
+Time of the $k$-th sucess/arrival\\
+$Y_k = T_1 + \ldots + T_k$ (Pascal), $T_i$ are iid Geometric($p$)\\
+$p_{Y_k}(t) = {t-1 \choose k-1} p^k (1-p)^{t-k}, t=k, k+1, \ldots$\\
+$\mathbf{E}[Y_k] = \frac{k}{p}$\\
+$Var(Y_k) = \frac{k(1-p)}{p^2}$\\
+
+Merged process\\
+$\text{Bernoulli}(p) + \text{Bernoulli}(q) = \text{Bernoulli}(p+q-pq)$\\
+$\mathbf{P}(\text{arrival in first process} | \text{arrival}) = \frac{p}{p+q-pq}$\\
+
+Splitting process\\
+Split arrivalssuccesses into two streams, using independent coin flips of a coin with bias $q$:\\
+Resulting streams are Bernoulli, successes rates are $pq$ and $p(1-q)$.\\
+The two streams are not independent\\
+
+\subsubsection*{Poisson Process}
+
+Number of arrivals in interval $\tau$: $N_\tau$ (Poisson)\\
+$P(N_\tau = k, \tau) = \frac{(\lambda \tau)^k e^{-\lambda \tau}}{k!}, k=0, 1, \ldots$\\
+$\mathbf{E}[N_\tau] = \lambda\tau$\\
+$Var(N_\tau) = \lambda\tau$\\
+
+Time until the first sucess/arrival $T_1$ (Exponential($\lambda$))\\
+$T_1 = \min\lbrace i: X_i = 1\rbrace$ (Geometric)\\
+$f_{T_1}(t) = \lambda e^{-\lambda t}, t \geq 0$\\
+$\mathbf{E}[T_1] = \frac{1}{\lambda}$\\
+$Var(T_1) = \frac{1}{\lambda^2}$\\
+
+Time of the $k$-th sucess/arrival:\\
+$Y_k = T_1 + \ldots + T_k$ (Erlang), $T_i$ are iid Exponentials($\lambda$)\\
+$f_{Y_k}(y) = \frac{\lambda^k y^{k-1} e^{-\lambda y}}{(k-1)!}, y \geq 0$\\
+$\mathbf{E}[Y_k] = \frac{k}{\lambda}$\\
+$Var(Y_k) = \frac{k}{\lambda^2}$\\
+
+Merged process\\
+$\text{Poisson}(\lambda_1) + \text{Poisson}(\lambda_2) = \text{Poisson}(\lambda_1+\lambda_2)$\\
+$\mathbf{P}(k\text{-th arrival comes from first process}) = \frac{\lambda_1}{\lambda_1+\lambda_2}$\\
+Independence for different arrivals\\
+
+Splitting process\\
+Split arrivals into two streams, using independent coin flips of a coin with bias $q$:\\
+Resulting streams are Poisson, rates $\lambda q$ and $\lambda (1-q)$.\\
+Resulting streams are independent!
