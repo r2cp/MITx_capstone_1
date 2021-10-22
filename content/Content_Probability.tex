@@ -1,35 +1,37 @@
 \section{Probability} 
 
 \subsection*{Unit 6: Derived distributions}
+$Z = X+Y$ (independent)\\
+$p_Z(z) = \sum_x p_X(x) p_Y(z-x)$\\
+$f_Z(z) = \int_{-\infty}^{\infty} f_X(x) f_Y(z-x) dx$\\
+Sum of independent normals is normal.\\
 
-$Z = X+Y$ (independent)
-\begin{itemize}
-\item $p_Z(z) = \sum_x p_X(x) p_Y(z-x)$
-\item $f_Z(z) = \int_{-\infty}^{\infty} f_X(x) f_Y(z-x) dx$
-\item Sum of independent normals is normal. 
-\end{itemize}
-
-Monotonic transformation: $Y = g(X)$
-\[ F_Y(y) = f_X(h(y))\left|\frac{dh}{dy}(y)\right|, h(y) = g^{-1}(x) \]
+Monotonic transformation: $Y = g(X)$\\
+$F_Y(y) = f_X(h(y))\left|\frac{dh}{dy}(y)\right|, h(y) = g^{-1}(x)$
 
 \subsection*{Unit 6: Deeper view of conditioning}
-\begin{itemize}
-\item \textbf{Law of iterated expectations} $\mathbf{E}[X] = \mathbf{E}\left[\mathbf{E}[X|Y] \right]$
-\item \textbf{Law of total variance} $Var(X) = \mathbf{E}\left[Var(X|Y)\right] + Var(\mathbf{E}[X|Y])$
-\end{itemize}
+
+Law of iterated expectations $\mathbf{E}[X] = \mathbf{E}\left[\mathbf{E}[X|Y] \right]$.
+
+Law of total variance $Var(X) = \mathbf{E}\left[Var(X|Y)\right] + Var(\mathbf{E}[X|Y])$
 
 Sum of a random number of independent r.v.'s: $Y = X_1 + \ldots + X_N$
-\[ \mathbf{E}[Y] = \mathbf{E}[N] \cdot \mathbf{E}[X] \]
-\[ Var(Y) = \mathbf{E}[N]\,Var(X) + (\mathbf{E}[X])^2\,Var(N) \]
+
+$\mathbf{E}[Y] = \mathbf{E}[N] \cdot \mathbf{E}[X]$
+
+$Var(Y) = \mathbf{E}[N]\,Var(X) + (\mathbf{E}[X])^2\,Var(N)$
 
 
 \subsection*{Unit 8: Limit theorems and classical statistics}
 
-\begin{itemize}
-\item \textbf{Markov inequality}: $X \geq 0$ and $a > 0$, then $\mathbf{P}(X \geq a) \leq \frac{\mathbf{E}[X]}{a}$
-\item \textbf{Chebyshev inequality}: $c > 0$, then $\mathbf{P}(|X - \mathbf{E}[X]| \geq c) \leq \frac{Var(X)}{c^2}$
-\item \textbf{Convergence in probability}: for every $\epsilon > 0$, $\mathbf{P}(|X_n - a| \geq \epsilon) \rightarrow 0$
-\item \textbf{Weak law of large numbers}: $X_i$ (i.i.d.), $M_n = \frac{X_1 + \ldots + X_n}{n} \rightarrow \mathbf{E}[X]$
-\item \textbf{Central limit theorem}: $X_i$ (i.i.d.), $\text{CDF of }\frac{X_1 + \ldots + X_n - n\mathbf{E}[X]}{\sqrt{n}\sigma_X} \rightarrow \text{ standard normal CDF}$
-\end{itemize}
+Markov inequality: $X \geq 0$ and $a > 0$, then $\mathbf{P}(X \geq a) \leq \frac{\mathbf{E}[X]}{a}$
+
+Chebyshev inequality: $c > 0$, then $\mathbf{P}(|X - \mathbf{E}[X]| \geq c) \leq \frac{Var(X)}{c^2}$
+
+Convergence in probability: for every $\epsilon > 0$, $\mathbf{P}(|X_n - a| \geq \epsilon) \rightarrow 0$
+
+Weak law of large numbers: $X_i$ (i.i.d.), $M_n = \frac{X_1 + \ldots + X_n}{n} \rightarrow \mathbf{E}[X]$
+
+Central limit theorem: $X_i$ (i.i.d.), $\text{CDF of }\frac{X_1 + \ldots + X_n - n\mathbf{E}[X]}{\sqrt{n}\sigma_X} \rightarrow \text{ standard normal CDF}$
+
 

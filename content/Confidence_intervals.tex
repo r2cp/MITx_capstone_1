@@ -10,6 +10,8 @@ Any random interval $\displaystyle \mathcal{I}$, depending on the sample $X_{1} 
 $\mathbb{P}_{\theta }[\mathcal{I} \ni \theta ] \geq 1-\alpha ,\ \ \forall \theta \in \Theta$\\
 Confidence interval of \textbf{asymptotic level} $\displaystyle 1-\alpha $  for $\displaystyle \theta $:\\
 Any random interval $\displaystyle \mathcal{I}$ whose boundaries do not depend on $\displaystyle \theta $ and such that: $\lim _{n\rightarrow \infty }\mathbb{P}_{\theta } [\mathcal{I} \ni \theta ]\geq 1-\alpha ,\ \ \forall \theta \in \Theta $
+
+
 \subsection{Two-sided asymptotic CI}
 Let $X_1, \ldots, X_n = \tilde{X}$ and $\tilde{X}\stackrel{iid} {\sim} P_{\theta}$. A two-sided CI is a function depending on $\tilde{X}$ giving an upper and lower bound in which the estimated parameter lies $\mathcal{I} = [l(\tilde{X},u(\tilde{X})]$ with a certain probability $\mathbb{P}(\theta \in  \mathcal{I}) \geq 1 -q_{\alpha}$ and conversely $\mathbb{P}(\theta \not\in  \mathcal{I}) \leq \alpha$\\
 Since the estimator is a r.v. depending on $\tilde{X}$ it has a variance $Var(\hat{\theta}_n$ and a mean $\mathbb{E}[\hat{\theta}_n]$. 
@@ -20,6 +22,8 @@ Since the CLT is valid for every distribution standardizing the distributions an
 \end{align*}
 This expression depends on the real variance $Var(X_i)$ of the r.vs, the variance has to be estimated.\\
 Three possible methods: plugin (use sample mean or empirical variance), solve (solve quadratic inequality), conservative (use the theoretical maximum of the variance).
+
+
 \subsection{Sample Mean and Sample Variance}
 Let $X_1, ..., X_n \stackrel{iid}{\sim} P_{\mu}$, where $E(X_i)=\mu$ and $Var(X_i)=\sigma^2$ for all $i=1,2,...,n$\\
 \textbf{Sample Mean:}
